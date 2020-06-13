@@ -1,0 +1,28 @@
+body {
+    /*background-color: #333;*/
+}
+
+#title {
+    text-align: center;
+}
+
+.input_wrapper {
+    display: inline-block;
+    width: 50%;
+}
+
+#user_inputs_wrapper {
+    /*background-color: blue;*/
+}
+
+#previewer_wrapper {
+    /*background-color: red;*/
+    padding: 30px;
+}
+
+#preview {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 5px solid black;
+}

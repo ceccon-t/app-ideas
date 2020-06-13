@@ -1,0 +1,52 @@
+<head>
+    <title>App Ideas - 02 - Border Radius Previewer</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <h1 id="title">Border Radius Previewer</h1>
+    <div id="user_inputs_wrapper">
+        <div class="input_wrapper" id="wrapper_top-left">
+            <label for="input_top-left">Top-left: </label>
+            <input id="input_top-left" size="3" maxlength="3"/>
+            <select id="input_top-left-unit">
+                <option value="px">px</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+        <div class="input_wrapper" id="wrapper_top-right">
+            <label for="input_top-right">Top right: </label>
+            <input id="input_top-right" size="3" maxlength="3"/>
+            <select id="input_top-right-unit">
+                <option value="px">px</option>
+                <option value="%">%</option>
+            </select>
+        </div>        
+        <div class="input_wrapper" id="wrapper_bottom-left">
+            <label for="input_bottom-left">Bottom left: </label>
+            <input id="input_bottom-left" size="3" maxlength="3"/>
+            <select id="input_bottom-left-unit">
+                <option value="px">px</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+        <div class="input_wrapper" id="wrapper_bottom-right">
+            <label for="input_bottom-right">Bottom right: </label>
+            <input id="input_bottom-right" size="3" maxlength="3"/>
+            <select id="input_bottom-right-unit">
+                <option value="px">px</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+        <div id="wrapper_apply">
+            <button onclick="updatePreview()">Apply</button>
+        </div>
+    </div>
+    <div id="previewer_wrapper">
+        <p>Preview: </p>
+        <br />
+        <div id="preview">
+
+        </div>
+    </div>
+</body>
