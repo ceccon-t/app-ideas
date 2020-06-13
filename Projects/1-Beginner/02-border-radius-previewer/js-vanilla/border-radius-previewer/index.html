@@ -8,32 +8,32 @@
     <div id="user_inputs_wrapper">
         <div class="input_wrapper" id="wrapper_top-left">
             <label for="input_top-left">Top-left: </label>
-            <input id="input_top-left" size="3" maxlength="3"/>
-            <select id="input_top-left-unit">
+            <input id="input_top-left" size="3" maxlength="3" onchange="updatePreview()"/>
+            <select id="input_top-left-unit" onchange="updatePreview()">
                 <option value="px">px</option>
                 <option value="%">%</option>
             </select>
         </div>
         <div class="input_wrapper" id="wrapper_top-right">
             <label for="input_top-right">Top right: </label>
-            <input id="input_top-right" size="3" maxlength="3"/>
-            <select id="input_top-right-unit">
+            <input id="input_top-right" size="3" maxlength="3" onchange="updatePreview()"/>
+            <select id="input_top-right-unit" onchange="updatePreview()">
                 <option value="px">px</option>
                 <option value="%">%</option>
             </select>
         </div>        
         <div class="input_wrapper" id="wrapper_bottom-left">
             <label for="input_bottom-left">Bottom left: </label>
-            <input id="input_bottom-left" size="3" maxlength="3"/>
-            <select id="input_bottom-left-unit">
+            <input id="input_bottom-left" size="3" maxlength="3" onchange="updatePreview()"/>
+            <select id="input_bottom-left-unit" onchange="updatePreview()">
                 <option value="px">px</option>
                 <option value="%">%</option>
             </select>
         </div>
         <div class="input_wrapper" id="wrapper_bottom-right">
             <label for="input_bottom-right">Bottom right: </label>
-            <input id="input_bottom-right" size="3" maxlength="3"/>
-            <select id="input_bottom-right-unit">
+            <input id="input_bottom-right" size="3" maxlength="3" onchange="updatePreview()"/>
+            <select id="input_bottom-right-unit" onchange="updatePreview()">
                 <option value="px">px</option>
                 <option value="%">%</option>
             </select>
@@ -48,5 +48,9 @@
         <div id="preview">
 
         </div>
+    </div>
+    <div id="wrapper_css_value">
+        <input id="css_value" value="0px 0px 0px 0px" size=25 disabled="true"/>
+        <button onclick="copyToClipboard()">Copy css</button>
     </div>
 </body>

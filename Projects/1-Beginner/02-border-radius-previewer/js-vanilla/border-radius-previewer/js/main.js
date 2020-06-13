@@ -1,18 +1,23 @@
-function hello () {
-    alert("I was clicked!");
+function updatePreview() {
+    newValue = generateBorderRadiusCss();
+
+    document.getElementById("preview").style.borderRadius = newValue;
+    document.getElementById("css_value").value = "border-radius: " + newValue + ";";
 }
 
-function updatePreview() {
-    /*
-    let topLeft = document.getElementById("input_top-left").value;
-    let topRight = document.getElementById("input_top-right").value;
-    let bottomRight = document.getElementById("input_bottom-right").value;
-    let bottomLeft = document.getElementById("input_bottom-left").value;
-    let newValue = generateBorderRadiusCss(topLeft, topRight, bottomRight, bottomLeft);
-    let a = getValueForSelect(document.getElementById("input_top-left-unit"));
-    alert("Is " + a);
-    alert("Updating to: " + newValue);
-    */
+function copyToClipboard() {
+    let cssValueDisplay = document.getElementById("css_value");
+
+    cssValueDisplay.disabled = false;
+    cssValueDisplay.select();
+    cssValueDisplay.setSelectionRange(0, 99999); // for mobile devices
+    document.execCommand("copy");
+    cssValueDisplay.disabled = true;
+
+    alert("Copied '" + cssValueDisplay.value + "' to clipboard");
+}
+
+function generateBorderRadiusCss() {
     let topLeftElement = document.getElementById("input_top-left");
     let topLeftUnitElement = document.getElementById("input_top-left-unit");
     let topRightElement = document.getElementById("input_top-right");
@@ -27,14 +32,12 @@ function updatePreview() {
                                                                 bottomRightElement, bottomRightUnitElement,
                                                                 bottomLeftElement, bottomLeftUnitElement);
 
-    let newValue = generateBorderRadiusCss(borderRadiusObject.topLeft, borderRadiusObject.topLeftUnit,
+    let newValue = generateBorderRadiusCssString(borderRadiusObject.topLeft, borderRadiusObject.topLeftUnit,
                                             borderRadiusObject.topRight, borderRadiusObject.topRightUnit,
                                             borderRadiusObject.bottomRight, borderRadiusObject.bottomRightUnit,
                                             borderRadiusObject.bottomLeft, borderRadiusObject.bottomLeftUnit);
 
-    alert("Updating to: " + newValue);
-    document.getElementById("preview").style.borderRadius = newValue;
-    alert("Updated!");
+    return newValue;
 }
 
 function buildBorderRadiusObjectFromElements(topLeftInput, topLeftUnitSelect,
@@ -58,7 +61,7 @@ function buildBorderRadiusObjectFromElements(topLeftInput, topLeftUnitSelect,
     return borderRadiusObject;
 }
 
-function generateBorderRadiusCss(topLeft, topLeftUnit, topRight, topRightUnit, 
+function generateBorderRadiusCssString(topLeft, topLeftUnit, topRight, topRightUnit, 
                                 bottomRight, bottomRightUnit, bottomLeft, bottomLeftUnit) {
     return topLeft + topLeftUnit + " " + topRight + topRightUnit + " "
              + bottomRight + bottomRightUnit + " " + bottomLeft + bottomLeftUnit;
